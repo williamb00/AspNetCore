@@ -6,9 +6,15 @@ namespace AspNetCore.Pages
 {
     public class SignUpModel : PageModel
     {
+        public string PageTitle { get; set; } = "Sign Up";
+        public SignUpFormModel Form { get; set; } = null!;
 
-        public SignUpFormModel Form { get; set; } = new SignUpFormModel();
+
         public void OnGet()
+        {
+        }
+
+        public void OnPost()
         {
         }
     }

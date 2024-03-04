@@ -1,0 +1,25 @@
+form {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+
+    .content {
+
+        .input-group {
+            display: grid;
+
+            label {
+               
+                margin-bottom: 3px;
+                font-weight: 700;
+            }
+
+            input {
+                width: 100%;
+                padding: 1rem;
+                border-radius: 8px !important;
+                border: 1px solid $gray-700;
+            }
+        }
+    }
+}

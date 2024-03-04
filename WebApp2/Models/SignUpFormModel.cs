@@ -5,7 +5,7 @@ namespace AspNetCore.Models
 {
     public class SignUpFormModel
     {
-        [DisplayName("First name")]
+        [Display(Name ="First name", Prompt = "Enter your first name")]
         [Required(ErrorMessage = "Invalid first name")]
         public string FirstName { get; set; } = null!;
 

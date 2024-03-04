@@ -1,5 +1,26 @@
 ﻿@page
 @model AspNetCore.Pages.SignUpModel
 @{
-    ViewData["Title"] = "Sign Up";
+    ViewData["Title"] = Model.PageTitle;
 }
+
+<section id="signup">
+    <div class="container">
+
+        <form method="post">
+            <h1>Create Account</h1>
+            <p>Already have an account? <a asp-page="/SignIn">Sign in here</a></p>
+
+            <div class="content">
+                <div class="input-group">
+                    <label asp-for="@Model.Form.FirstName"></label>
+                    <input asp-for="@Model.Form.FirstName">
+                </div>
+            </div>
+
+            <button class="btn-theme-s">Sign Up</button>
+
+        </form>
+
+    </div>
+</section>
