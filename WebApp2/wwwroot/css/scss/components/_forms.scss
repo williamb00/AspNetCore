@@ -1,25 +1,36 @@
 form {
     width: 100%;
     display: grid;
-    gap: 1rem;
+    
 
-    .content {
+    .input-group {
+        display: grid;
+        margin: 1rem 0;
+    }
 
-        .input-group {
-            display: grid;
+    .checkbox-group {
+        margin: 1rem 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; 
+        gap: 1rem;
 
-            label {
-               
-                margin-bottom: 3px;
-                font-weight: 700;
-            }
-
-            input {
-                width: 100%;
-                padding: 1rem;
-                border-radius: 8px !important;
-                border: 1px solid $gray-700;
-            }
+        input[type="checkbox"] {
+            height: 1.2rem;
+            width: 1.2rem;
         }
     }
+
+    label {
+        margin-bottom: 3px;
+        font-weight: 700;
+    }
+
+    input {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 8px !important;
+        border: 1px solid $gray-700;
+    }
 }
+
