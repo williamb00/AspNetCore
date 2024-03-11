@@ -383,6 +383,27 @@ form input {
   border-radius: 8px !important;
   border: 1px solid #565973;
 }
+form input::placeholder {
+  opacity: 0.4;
+}
+form input.input-validation-error {
+  border: 1px solid #EF4444 !important;
+  color: #EF4444;
+}
+form input.input-validation-error::placeholder {
+  color: #EF4444;
+}
+form span.field-validation-error {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px !important;
+  color: #EF4444;
+}
 
 header {
   padding: 15px 0;

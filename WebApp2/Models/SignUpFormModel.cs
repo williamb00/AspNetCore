@@ -1,5 +1,8 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography.Xml;
 
 namespace AspNetCore.Models
 {
@@ -30,7 +33,26 @@ namespace AspNetCore.Models
         public string ConfirmPassword { get; set; } = null!;
 
         [Display(Name = "I agree to the Terms & Conditions")]
-        [Required(ErrorMessage = "You must agree to the terms & conditions")]
-        public bool Terms { get; set; }
+        [CheckBoxRequired(ErrorMessage = "You must agree to the terms & conditions")]
+        public bool Terms { get; set; } = false;
     }
+    
+public class CheckBoxRequired : ValidationAttribute, IClientModelValidator
+{
+    public override bool IsValid(object value)
+    {
+        if (value is bool)
+        {
+            return (bool)value;
+        }
+
+        return false;
+
+    }
+
+    public void AddValidation(ClientModelValidationContext context)
+    {
+        context.Attributes.Add("data-val-checkboxrequired", FormatErrorMessage(context.ModelMetadata.GetDisplayName()));
+    }
+}
 }
